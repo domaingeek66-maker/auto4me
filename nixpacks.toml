@@ -1,11 +1,2 @@
-[phases.setup]
-nixPkgs = ["gcc"]
-
-[phases.install]
-cmds = ["pip install -r requirements.txt"]
-
 [start]
 cmd = "gunicorn api_railway:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120"
-
-[variables]
-NIXPACKS_PYTHON_VERSION = "3.11"
